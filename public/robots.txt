@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Sitemap: add once a custom domain is connected
