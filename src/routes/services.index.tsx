@@ -6,7 +6,7 @@ import { FAQ } from "@/components/sections/FAQ";
 import { services } from "@/lib/site-data";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import srvImg from "@/assets/abt2.PNG";
+import srvImg from "@/assets/abt2.png";
 
 const title = "Services — Software, AI, Web, Mobile & Cloud | ZUARAK";
 const description =
