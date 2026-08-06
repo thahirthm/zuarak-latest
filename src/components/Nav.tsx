@@ -75,7 +75,7 @@ export function Nav() {
 
           <div className="flex items-center gap-2">
             <div className="hidden sm:block">
-              <MagneticLink to="/contact" className="px-6 py-3">
+              <MagneticLink href="https://wa.me/918714419511" target="_blank" rel="noopener noreferrer" className="px-6 py-3">
                 Let's Talk
               </MagneticLink>
             </div>
@@ -133,13 +133,15 @@ export function Nav() {
             </ul>
 
             <div className="mt-8 mb-6">
-              <Link
-                to="/contact"
+              <a
+                href="https://wa.me/918714419511"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="flex w-full items-center justify-center rounded-full bg-white px-8 py-5 text-sm font-semibold uppercase tracking-widest text-black transition-transform active:scale-95"
               >
                 Let's Talk
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

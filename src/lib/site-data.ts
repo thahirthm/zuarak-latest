@@ -19,8 +19,8 @@ export const company = {
   hours: ["Monday – Friday · 9:30 — 18:30", "Saturday · 10:00 — 15:00", "Sunday · Closed"],
   mapQuery: "Nadakkavu,+Kozhikode,+Kerala,+India",
   socials: [
-    { label: "LinkedIn", href: "https://www.linkedin.com" },
-    { label: "Instagram", href: "https://www.instagram.com" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/zuarak" },
+    { label: "Instagram", href: "https://www.instagram.com/zuarak_?igsh=eTdmeTczaXF0OHd6&utm_source=qr" },
     // { label: "GitHub", href: "https://github.com" },
   ],
 };

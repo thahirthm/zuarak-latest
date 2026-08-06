@@ -394,16 +394,7 @@ export function InteractiveAI() {
         )}
       </AnimatePresence>
       
-      {isSpeaking && spokenText && (
-        <div className="fixed inset-x-0 bottom-10 z-[200] flex justify-center pointer-events-none px-4">
-          <div className="bg-white/70 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-md shadow-xl max-w-3xl w-fit text-center border border-black/10">
-            <p className="font-mono text-[9px] md:text-[10px] text-black uppercase leading-relaxed tracking-widest font-semibold break-words">
-              {spokenText}
-              <span className="inline-block w-1 h-2 ml-1.5 bg-black animate-pulse align-middle" />
-            </p>
-          </div>
-        </div>
-      )}
+
 
       <button
         onClick={toggleAssistant}

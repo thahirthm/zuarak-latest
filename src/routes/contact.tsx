@@ -73,14 +73,36 @@ function ContactPage() {
         <Reveal className="mx-auto max-w-4xl">
           <form
             className="grid gap-6 md:gap-8 rounded-none md:rounded-[2rem] border-y md:border border-white/10 bg-white/5 px-6 py-10 md:p-14 lg:p-16"
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
               setSending(true);
-              window.setTimeout(() => {
+              
+              const form = e.target as HTMLFormElement;
+              const formData = new FormData(form);
+              
+              // Replace this placeholder with the actual Web3Forms access key for info@zuarak.com
+              formData.append("access_key", "76478399-c051-4833-b973-9ff05994d74f");
+              formData.append("subject", "New Contact Enquiry from ZUARAK Website");
+
+              try {
+                const response = await fetch("https://api.web3forms.com/submit", {
+                  method: "POST",
+                  body: formData,
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                  toast.success("Thank you. We'll be in touch within one working day.");
+                  form.reset();
+                } else {
+                  toast.error("Something went wrong. Please try again or email us directly.");
+                }
+              } catch (error) {
+                toast.error("Failed to send message. Please check your connection.");
+              } finally {
                 setSending(false);
-                toast.success("Thank you. We'll be in touch within one working day.");
-                (e.target as HTMLFormElement).reset();
-              }, 900);
+              }
             }}
           >
             <div className="grid gap-6 sm:grid-cols-2">
@@ -105,11 +127,30 @@ function ContactPage() {
               </div>
             </div>
             
-            <div>
-              <label htmlFor="company" className="font-mono text-xs uppercase tracking-widest text-white/40">
-                Company
-              </label>
-              <input id="company" name="company" placeholder="Optional" className={`mt-4 ${fieldClass}`} />
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div>
+                <label htmlFor="phone" className="font-mono text-xs uppercase tracking-widest text-white/40">
+                  Phone
+                </label>
+                <input 
+                  id="phone" 
+                  name="phone" 
+                  type="tel"
+                  required
+                  placeholder="Your phone number" 
+                  className={`mt-4 ${fieldClass}`}
+                  onInput={(e) => {
+                    const target = e.target as HTMLInputElement;
+                    target.value = target.value.replace(/[^0-9+]/g, '');
+                  }}
+                />
+              </div>
+              <div>
+                <label htmlFor="company" className="font-mono text-xs uppercase tracking-widest text-white/40">
+                  Company
+                </label>
+                <input id="company" name="company" placeholder="Optional" className={`mt-4 ${fieldClass}`} />
+              </div>
             </div>
 
             <div>

@@ -10,7 +10,7 @@ export function Clients() {
   const duplicatedClients = [...clients, ...clients, ...clients, ...clients];
 
   return (
-    <section id="clients" className="overflow-hidden bg-[#09090b] px-6 pb-24 pt-0 text-white md:px-10 md:pb-32 md:pt-0">
+    <section id="clients" className="overflow-hidden bg-[#09090b] px-6 pb-12 pt-0 text-white md:px-10 md:pb-16 md:pt-0">
       <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <p className="text-[10px] font-semibold tracking-[0.3em] text-white/70 uppercase md:text-xs">

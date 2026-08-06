@@ -129,7 +129,7 @@ export function VideoReels() {
   const [activeVideoId, setActiveVideoId] = useState<number | null>(null);
 
   return (
-    <section id="reels" className="bg-[#09090b] px-6 py-28 text-white md:px-10 md:py-40">
+    <section id="reels" className="bg-[#09090b] px-6 pt-12 pb-28 text-white md:px-10 md:pt-16 md:pb-40">
       <div className="mx-auto max-w-[1400px]">
         {/* Header */}
         <Reveal>
