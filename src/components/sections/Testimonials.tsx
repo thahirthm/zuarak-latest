@@ -34,23 +34,19 @@ export function Testimonials() {
               animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, x: -dir * 60, filter: "blur(12px)" }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="grid gap-10 rounded-[32px] border border-white/5 bg-[#111] p-8 md:grid-cols-[auto_1fr] md:p-14 lg:p-20"
+              className="grid  gap-5 md:gap-10 rounded-[32px] border border-white/5 bg-[#111] p-8 md:grid-cols-[auto_1fr] md:p-14 lg:p-20"
             >
               <div
                 aria-hidden
-                className="grid size-24 shrink-0 place-items-center rounded-2xl bg-black text-2xl font-bold border border-white/10 text-white md:size-32 md:text-4xl"
+                className="order-2 md:order-1 grid size-16 md:size-32 shrink-0 place-items-center rounded-2xl bg-black text-xl md:text-4xl font-bold border border-white/10 text-white"
               >
                 {item.name
                   .split(" ")
                   .map((n) => n[0])
                   .join("")}
               </div>
-              <div className="min-w-0">
-                <div className="flex gap-1" aria-label={`${item.rating} out of 5`}>
-                  {Array.from({ length: item.rating }).map((_, i) => (
-                    <Star key={i} className="size-3.5 fill-white" />
-                  ))}
-                </div>
+              <div className="order-1 md:order-2 min-w-0">
+
                 <blockquote className="mt-6 text-xl font-normal leading-snug tracking-tight text-white md:text-3xl lg:text-4xl">
                   “{item.quote}”
                 </blockquote>

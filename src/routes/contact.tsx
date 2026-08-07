@@ -70,7 +70,7 @@ function ContactPage() {
 
       {/* FULL WIDTH FORM */}
       <section className="px-0 md:px-10 pb-16 md:pb-32 pt-12 md:pt-32">
-        <Reveal className="mx-auto max-w-4xl">
+        <Reveal className="mx-auto w-full max-w-[1400px]">
           <form
             className="grid gap-6 md:gap-8 rounded-none md:rounded-[2rem] border-y md:border border-white/10 bg-white/5 px-6 py-10 md:p-14 lg:p-16"
             onSubmit={async (e) => {
@@ -105,67 +105,63 @@ function ContactPage() {
               }
             }}
           >
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div>
-                <label htmlFor="name" className="font-mono text-xs uppercase tracking-widest text-white/40">
-                  Name
-                </label>
-                <input id="name" name="name" required placeholder="Your name" className={`mt-4 ${fieldClass}`} />
-              </div>
-              <div>
-                <label htmlFor="email" className="font-mono text-xs uppercase tracking-widest text-white/40">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="you@company.com"
-                  className={`mt-4 ${fieldClass}`}
-                />
-              </div>
+            <div className="mb-2 md:mb-4">
+              <h2 className="text-2xl md:text-3xl font-light text-white tracking-tight">Send an Enquiry</h2>
+              <p className="mt-2 text-sm text-white/50 font-light">Please fill out the form below and we will get back to you shortly.</p>
             </div>
             
             <div className="grid gap-6 sm:grid-cols-2">
-              <div>
-                <label htmlFor="phone" className="font-mono text-xs uppercase tracking-widest text-white/40">
-                  Phone
-                </label>
-                <input 
-                  id="phone" 
-                  name="phone" 
-                  type="tel"
-                  required
-                  placeholder="Your phone number" 
-                  className={`mt-4 ${fieldClass}`}
-                  onInput={(e) => {
-                    const target = e.target as HTMLInputElement;
-                    target.value = target.value.replace(/[^0-9+]/g, '');
-                  }}
-                />
-              </div>
-              <div>
-                <label htmlFor="company" className="font-mono text-xs uppercase tracking-widest text-white/40">
-                  Company
-                </label>
-                <input id="company" name="company" placeholder="Optional" className={`mt-4 ${fieldClass}`} />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="message" className="font-mono text-xs uppercase tracking-widest text-white/40">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
+              <input 
+                id="name" 
+                name="name" 
+                aria-label="Name"
+                required 
+                placeholder="Name" 
+                className={fieldClass} 
+              />
+              <input
+                id="email"
+                name="email"
+                type="email"
+                aria-label="Email"
                 required
-                rows={6}
-                placeholder="Tell us what you're building…"
-                className={`mt-4 resize-none ${fieldClass}`}
+                placeholder="Email Address"
+                className={fieldClass}
               />
             </div>
+            
+            <div className="grid gap-6 sm:grid-cols-2">
+              <input 
+                id="phone" 
+                name="phone" 
+                type="tel"
+                aria-label="Phone"
+                required
+                placeholder="Phone Number" 
+                className={fieldClass}
+                onInput={(e) => {
+                  const target = e.target as HTMLInputElement;
+                  target.value = target.value.replace(/[^0-9+]/g, '');
+                }}
+              />
+              <input 
+                id="company" 
+                name="company" 
+                aria-label="Company"
+                placeholder="Company (Optional)" 
+                className={fieldClass} 
+              />
+            </div>
+
+            <textarea
+              id="message"
+              name="message"
+              aria-label="Message"
+              required
+              rows={6}
+              placeholder="Tell us what you're building…"
+              className={`resize-none ${fieldClass}`}
+            />
             
             <div className="mt-4 flex justify-end">
               <button
