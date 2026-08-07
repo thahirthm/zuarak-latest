@@ -39,16 +39,14 @@ export function Nav() {
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: hidden ? -100 : 0, opacity: hidden ? 0 : 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed inset-x-0 top-0 z-[80] px-4 pt-4 md:px-8 md:pt-6"
+        className={cn(
+          "fixed inset-x-0 top-0 z-[80] transition-colors duration-700",
+          scrolled ? "bg-black border-b border-white/10" : "bg-transparent border-b border-transparent"
+        )}
       >
         <nav
           aria-label="Primary"
-          className={cn(
-            "mx-auto flex max-w-[1400px] items-center justify-between rounded-2xl  py-3 transition-all duration-700 md:rounded-full md:px-6",
-            scrolled
-              ? "border border-border bg-surface/70 backdrop-blur-xl"
-              : "border border-transparent bg-transparent",
-          )}
+          className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-6 py-4 md:px-10 md:py-5"
         >
           <Link to="/" aria-label="ZUARAK home" className="shrink-0">
             <img src={logoEnglish} alt="ZUARAK" className="h-6 w-auto md:h-9" />

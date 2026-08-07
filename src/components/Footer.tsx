@@ -211,11 +211,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Row - Massive Lined Text */}
-        <div className="mt-10 md:mt-20 flex w-full justify-center overflow-hidden">
+        <div className="mt-10 md:mt-20 flex w-full justify-center overflow-hidden pb-8 md:pb-0">
           <div 
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="relative flex gap-[2vw] cursor-crosshair select-none text-[21vw] font-medium leading-[0.8] md:gap-[3vw]"
+            className="relative flex gap-[2vw] cursor-crosshair select-none text-[21vw] font-medium leading-[1] md:leading-[0.8] md:gap-[3vw]"
           >
             {/* Render Music Note Particles */}
             {particles.map(p => (
